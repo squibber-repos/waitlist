@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squibber Waitlist</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/svg+xml" href="favicon-transparent.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="linkedin-favicon.png"> <!-- LinkedIn favicon link -->
+    <script src="
+    https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.min.js
+    "></script>
+    <script src="index.js" defer></script> <!-- Importing index.js -->
+</head>
+<body>
+    <main>
+        <div class="navigation-container">
+            <button class="navigation-button waitlist-button">Waitlist</button> | <button class="navigation-button about-us-button">About Us</button>
+        </div>
+        <header>
+            <div class="header-begin">
+                <img src="favicon.svg" alt="Squibber Logo" class="logo">
+                <div class="header-text">
+                    <h1>Squibber</h1>
+                    <h3>Subletting Simplified</h3>
+                </div>
+            </div>
+            <div class="icon-links">
+                <a class="icon-link" href="https://www.instagram.com/theofficialsquibber/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="icon-link" href="https://www.linkedin.com/in/jonathanpmanta" target="_blank"> <!-- Updated LinkedIn link -->
+                    <i class="fab fa-linkedin"></i>
+                </a>    
+            </div>
+        </header>
+
+
+        <div class="waitlist-section">
+
+            <article>
+                <h2>Hello 👋</h2>
+                <p>
+                    Welcome to <span class="accent-text">Squibber</span> — the go-to platform helping college students easily sublease their room to other college students.
+                    Whether you're looking to post your place or find your next one, we're here to make housing simple, secure, and stress-free.
+                </p>
+                <p>
+                    Our platform is built exclusively for college students, creating a trusted network of peers across campuses.
+                    Last fall alone, we had over <span class="accent-text">2,000 active users</span>, with <span class="accent-text">50+ listings</span> and <span class="accent-text">15+ successful sublet exchanges</span> made directly on
+                    Squibber.
+                    We're currently rebuilding Squibber from the ground up — a full refresh to deliver the experience you actually need and deserve.
+                </p>
+                <h2>New Features 🐘</h2>
+                <p>
+                    The new platform will include:
+                </p>
+                <ul>
+                    <li><strong>No sketchy listings</strong> — every post is verified with .edu emails and verified user and lease info, so you know exactly who you're dealing with.</li>
+                    <li><strong>Legal protection</strong> — subleases will be backed by legally binding agreements.</li>
+                    <li><strong>Easy, secure payments</strong> — everything handled on-platform, so you can save money, make money, and do it all safely.</li>
+                </ul>
+                <p>
+                    While we finish, we've launched this waitlist so you'll be first in line when we go live at your school!
+                </p>
+                
+                    <p><b>Best,<br> Jonathan (Founder)</b></p>
+                
+            </article>
+
+            <div class="form-container">
+                <h2 class="form-title">Waitlist Form</h2>
+                <form id="waitlistForm" onsubmit="handleSubmit(event)">
+                    <div class="input-and-error">
+                        <input type="email" id="email" name="email" placeholder="College Email (.edu)" required>
+                        <span class="error" id="emailError"></span>
+                    </div>
+
+                    <div class="input-and-error">
+                        <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+                        <span class="error" id="nameError"></span>
+                    </div>
+
+                    <div class="input-and-error">
+                        <input type="text" id="school" name="school" placeholder="School" required>
+                        <span class="error" id="schoolError"></span>
+                    </div>
+
+                    <div class="input-and-error">
+                        <select id="year" name="year" required>
+                            <option value="">Select Year</option>
+                            <option value="Freshman">Freshman</option>
+                            <option value="Sophomore">Sophomore</option>
+                            <option value="Junior">Junior</option>
+                            <option value="Senior">Senior</option>
+                            <option value="Graduate">Graduate</option>
+                            <option value="Graduate">PhD</option>
+                        </select>
+                        <span class="error" id="yearError"></span>
+                    </div>
+
+                    <div class="input-and-error">
+                        <select id="role" name="role" required>
+                            <option value="">Select Role</option>
+                            <option value="Host">Host (I have space to sublet)</option>
+                            <option value="Subletter">Subletter (I'm looking for housing)</option>
+                        </select>
+                        <span class="error" id="roleError"></span>
+                    </div>
+
+                    <button type="submit" class="submit-button">Join Waitlist</button>
+                    <div id="submitStatus" class="status"></div>
+                </form>
+            </div>
+        </div>
+
+        <div class="about-us-section">
+            
+            <div class="about-us-image">
+                <img src="jon.jpg" alt="Jonathan Manta" class="jon-image">
+                <div class="profile-text">
+                    <h3>Hi, I'm Jonathan</h3>
+                    <p>I'm a the founder of Squibber!</p>
+                </div>
+            </div>
+            <div class="about-us-image">
+                <div class="profile-text">
+                    <h3>Hi, I'm Seth</h3>
+                    <p>I'm a the a developer at Squibber.</p>
+                </div>
+                <img src="seth.jpg" alt="Seth Lupo" class="jon-image">
+            </div>
+
+           
+            <article>
+                <h2>Mission</h2>
+                <p>
+                    Let's address the elephant in the room—finding a sublet as a student is like finding an internship… a <span class="danger-text">nightmare</span>. I know this firsthand. I'm <span class="accent-text">Jonathan Manta</span>, a student at Tufts University and the founder of Squibber. The summer after my freshman year, I worked long days in concrete construction while trying to secure a sublet. I ended up on a sketchy website, paying just to contact homeowners and hoping for a response. That's when I realized there had to be a better, safer way.
+                </p>
+                <h2>Story</h2>
+                <p>
+                    My close friends know this about me—I'm super <span class="danger-text">dyslexic</span>, have <span class="danger-text">ADHD</span>, and am <span class="danger-text">colorblind</span>. For me, things work differently, and I always look for the simplest way to solve problems. When designing Squibber, every feature and function was inspired by real personal experiences and challenges.
+                </p>
+                <p>
+                    Since I find visual instructions clearer than text, Squibber emphasizes quick, easy-to-follow videos over lengthy explanations. We've thoughtfully incorporated iconography into our listings to ensure clarity for users with diverse abilities. Additionally, we've paid close attention to UX decisions, including intuitive navigation and high-contrast colors to accommodate various visual needs. At Squibber, we believe accessible housing is just as important as accessibility for disabilities—it's about <span class="accent-text">inclusivity</span>, creating a community where everyone, no matter their ability, can easily use our services.
+                </p>
+                <p>
+                    After my summer shifts, I started coding the first version of Squibber—a platform designed to simplify and secure the leasing and subletting process. We launched a pilot at Tufts, and through word of mouth, we quickly grew to over <span class="accent-text">2,000 active users</span>.
+                </p>
+                <h2>Our Platform</h2>
+                <p>
+                    Squibber isn't just another subleasing listing site. We're building a community-driven platform that connects students directly, making it easier to find <span class="accent-text">reliable sublets</span>. Our dream is to have a platform that is easy to use and that all students, especially <span class="accent-text">international students students</span>, <span class="accent-text">economically disadvantaged students</span>, <span class="accent-text">first-gen students</span>, and <span class="accent-text">students with disabilities</span>, can benefit from.
+                </p>
+                <p>
+                    Join us today and experience a better way to find the <span class="accent-text">perfect match</span> for your space.
+                </p>
+            </article>
+            
+        </div>
+    </main>
+
+    <h4 class="featured-in">Featured in:</h4>
+    <div class="media-container">
+        <a class="media-element tufts-daily"
+            href="https://www.tuftsdaily.com/article/2024/10/squibber-your-next-subletting-strategy"></a>
+        <a class="media-element derby"
+            href="https://derbyecenter.tufts.edu/competitions/newventurescompetition/2025finals/2025teams/"></a>
+        <a class="media-element tufts-now"
+            href="https://now.tufts.edu/2025/01/28/need-sublet-how-about-coffee-or-free-pizza-students-make-apps"></a>
+    </div>
+   
+    
+</body>
+
+<footer>
+    
+    <h4 class="footer-text">© 2025 Squibber Inc. All rights reserved.</h4>
+</footer>
+</html>
