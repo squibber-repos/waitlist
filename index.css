@@ -350,12 +350,21 @@ h3 {
     background-size: contain;
     background-repeat: no-repeat;
     flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background-color: white;
+    transition: all 0.3s ease;
 }
 
-@media (max-width: 600px) { /* Adjust the max-width as needed */
-    .media-container {
+.media-element:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+
+.media-container {
         flex-direction: column; /* Change flex flow to column on mobile */
     }
+@media (max-width: 600px) { /* Adjust the max-width as needed */
+    
 }
 
 .derby {
@@ -408,5 +417,16 @@ h3 {
     .header-text {
         display: none;
     }
+    .about-us-text-person {
+        display: none;
+    }
+    .profile-text p{ 
+        font-size: 0.75rem;
+    }
+    .profile-text h3 {
+        font-size: 1.5rem;
+    }
+    
 }
+
 
