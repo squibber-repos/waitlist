@@ -40,7 +40,6 @@ function showStatus(message, isError = false) {
 // Form submission handler
 async function handleSubmit(event) {
 
-    alert('test');
     event.preventDefault();
     
     // Get form elements
@@ -57,8 +56,6 @@ async function handleSubmit(event) {
     // clearError('school');
     // clearError('year');
     // clearError('role');
-
-    alert('test2');
     
     // Validate inputs
     let hasError = false;
@@ -94,7 +91,6 @@ async function handleSubmit(event) {
     
     // Disable submit button
     const submitButton = form.querySelector('button[type="submit"]');
-    alert('test2');
     submitButton.disabled = true;
     
     try {
